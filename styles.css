@@ -1,0 +1,194 @@
+/* AdminLTE Inspired Dashboard Styling */
+:root {
+    --primary: #3c8dbc;
+    --primary-dark: #367fa9;
+    --sidebar-bg: #222d32;
+    --sidebar-hover: #1e282c;
+    --content-bg: #ecf0f5;
+    --text: #333;
+    --text-muted: #777;
+    --white: #ffffff;
+    --info-box-bg: #00c0ef;
+    --success-box-bg: #00a65a;
+    --warning-box-bg: #f39c12;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--content-bg);
+    color: var(--text);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Main Content */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: var(--primary);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    color: white;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.content-header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-header h1 { font-size: 1.5rem; font-weight: 400; }
+
+.content {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+/* Info Boxes (Compact Cards) */
+.info-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-box-icon {
+    width: 90px;
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.info-box-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.info-box-content {
+    padding: 10px 15px;
+    flex-grow: 1;
+}
+
+.info-box-text { text-transform: uppercase; font-size: 0.85rem; color: var(--text-muted); }
+.info-box-number { font-size: 1.1rem; font-weight: 700; margin: 5px 0; display: block; }
+
+.info-box .btn-link {
+    display: block;
+    margin-top: 5px;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Boxes (FAQ & Video) */
+.box {
+    background: white;
+    border-top: 3px solid var(--primary);
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.box-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-title { font-size: 1.1rem; font-weight: 400; }
+
+.box-body { padding: 15px; }
+
+/* FAQ List */
+.faq-list { list-style: none; }
+.faq-item { border-bottom: 1px solid #f4f4f4; }
+.faq-q {
+    padding: 10px 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+}
+.faq-a {
+    padding-bottom: 10px;
+    display: none;
+    color: #666;
+    font-size: 0.9rem;
+}
+.faq-item.active .faq-a { display: block; }
+
+/* Video Player */
+.video-container { width: 100%; max-width: 800px; margin: 0 auto; }
+video { width: 100%; border-radius: 3px; background: #000; }
+
+.video-nav { margin-top: 10px; display: flex; gap: 5px; flex-wrap: wrap; }
+.video-nav button {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.video-nav button.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* Bookmark Form */
+.bookmark-btn {
+    background: var(--success-box-bg);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+.modal-content {
+    background: white;
+    width: 350px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 3px;
+}
+.modal-content h3 { margin-bottom: 15px; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-size: 0.9rem; }
+.form-group input { width: 100%; padding: 8px; border: 1px solid #ddd; }
+.modal-actions { text-align: right; }
+
+@media (max-width: 768px) {
+    aside { display: none; }
+    .info-row { grid-template-columns: 1fr; }
+}
